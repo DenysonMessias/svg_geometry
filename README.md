@@ -1,6 +1,6 @@
 # SvgGeometry
 
-TODO: Write a gem description
+Library to work with SVG geometry objects(path, circle, rect, ...)
 
 ## Installation
 
