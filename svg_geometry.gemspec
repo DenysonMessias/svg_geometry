@@ -8,8 +8,8 @@ Gem::Specification.new do |spec|
   spec.version       = SvgGeometry::VERSION
   spec.authors       = ["Alan Gomes"]
   spec.email         = ["alan@ubee.in"]
-  spec.description   = %q{TODO: Write a gem description}
-  spec.summary       = %q{TODO: Write a gem summary}
+  spec.description   = "Ruby Svg Geometry Gem"
+  spec.summary       = ""
   spec.homepage      = ""
   spec.license       = "MIT"
 
