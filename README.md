@@ -18,9 +18,7 @@ Or install it yourself as:
 
 ## Usage
 
-```
-svg_tag = SvgGeometry.parse_svg_tag("<rect>...</rect>")
-```
+    svg_tag = SvgGeometry.parse_svg_tag("<rect>...</rect>")
 
 ## Contributing
 
