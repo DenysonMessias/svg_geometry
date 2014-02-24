@@ -94,6 +94,29 @@ module SvgGeometry
       poly
     end
 
+    def contains(position)
+      count = 0
+      j = self.positions.length-1
+      for i in (0..self.positions.length-1)
+        p1 = positions[j]
+        p2 = positions[i]
+        if position.belongs_to_segment(p1, p2)
+          return true
+        end
+        if p2.y > position.y && p1.y <= position.y 
+          if (p2 - p1) % (position - p1) < 0
+            count = count + 1
+          end
+        elsif p1.y > position.y && p2.y <= position.y
+          if (p1 - p2) % (position - p2) < 0
+            count = count + 1
+          end
+        end
+        j = i
+      end
+      (count % 2) == 1
+    end
+
     def to_svg_points
       positions.map { |position| "#{position.x},#{position.y}" }.join(" ")
     end

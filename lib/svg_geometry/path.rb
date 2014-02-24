@@ -22,6 +22,8 @@ module SvgGeometry
     @tag_name = "path"
 
     attr_accessor :segments
+    
+    @transformed_polygons = nil
 
     def initialize(*args)
       if args[0] && args[0].is_a?(Array)
@@ -69,39 +71,50 @@ module SvgGeometry
       @lenght ||= lengths.inject(0) { |sum, len| sum + len }
     end
 
-    def to_polygon(length_delta, path_length=self.length)
+    def to_polygons(length_delta, path_length=self.length, sample_lines=true)
       if path_length == 0 || path_length >= Util::FIXNUM_MAX
-        return Polygon.new([])
+        return [Polygon.new([])]
       end
 
+      polygons = []
       poly = Polygon.new([])
+      last_end_point = nil
 
       self.segments.each do |segment|
-        poly.add_position(segment.start)
+        if (last_end_point != nil) && (last_end_point.dist(segment.start) > 1E-1)
+           poly.transform = self.transform
+           polygons.push(poly)
+           poly = Polygon.new([])
+        end
+        if (last_end_point == nil) || (last_end_point.dist(segment.start) > 1E-1) 
+          poly.add_position(segment.start)
+        end
+        
+        if sample_lines || !segment.is_a?(Line)
+          subpath_length = segment.length
 
-        subpath_length = segment.length
+          # Numero de pontos além do ponto inicial (startpoint)
+          num_positions = (subpath_length.to_f/length_delta.to_f).floor   
 
-        # Numero de pontos além do ponto inicial (startpoint)
-        num_positions = (subpath_length.to_f/length_delta.to_f).floor   
+          delta = length_delta/subpath_length.to_f
 
-        delta = length_delta/subpath_length.to_f
+          (1..(num_positions)).each { |i| poly.add_position(segment.point_by_percent(i * delta)); }
 
-        (1..(num_positions)).each { |i| poly.add_position(segment.point_by_percent(i * delta)); }
+          last = poly.positions.last
+          control_point = segment.endp
 
-        last = poly.positions.last
-        control_point = segment.endp
+          # Tratando o caso de um ponto de controle ficar muito perto do ultimo ponto gerado
+          if last
+            dist = control_point.dist(last)
+            if dist < length_delta && num_positions > 1
+              sum_deltas = (num_positions - 1) * delta
+              substitute_point = segment.point_by_percent(sum_deltas + (1 - sum_deltas)/2.0)
 
-        # Tratando o caso de um ponto de controle ficar muito perto do ultimo ponto gerado
-        if last
-          dist = control_point.dist(last)
-          if dist < length_delta && num_positions > 1
-            sum_deltas = (num_positions - 1) * delta
-            substitute_point = segment.point_by_percent(sum_deltas + (1 - sum_deltas)/2.0)
-
-            last.x, last.y = substitute_point.x, substitute_point.y
+              last.x, last.y = substitute_point.x, substitute_point.y
+            end
           end
         end
-
+        last_end_point = segment.endp
         # Se o tamanho do subpath for divisivel com o tamanho delta, o ultimo ponto inserido já é o endpoint do segmento
         # Não sendo necessário adiciona-lo novamente. Porem esta restricao fica no metodo add_position do polygon
         # que nao permite a insercao de 2 pontos iguais consecutivamente
@@ -109,7 +122,31 @@ module SvgGeometry
       end
 
       poly.transform = self.transform
-      poly
+      polygons.push(poly)
+      polygons
+    end
+
+    def contains(position, length_delta)
+      if @transformed_polygons == nil
+        @transformed_polygons = self.to_polygons(length_delta, self.length, false)
+        @transformed_polygons.each do |polygon|
+          polygon.apply_transform!
+        end
+      end
+      if !@transformed_polygons[0].contains(position)
+         return false
+      else
+         for i in (1..@transformed_polygons.length-1)
+           if @transformed_polygons[i].contains(position)
+             return false
+           end
+         end
+         return true
+      end
+    end
+
+    def to_polygon(length_delta, path_length=self.length)
+      self.to_polygons(length_delta, path_length).first
     end
 
     def to_simple_polygon(length_delta, path_length=self.length)

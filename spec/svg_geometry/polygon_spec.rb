@@ -33,4 +33,18 @@ describe SvgGeometry::Polygon do
       pending
     end
   end
+
+  describe '#contains' do
+    it 'should check if point is in polygon' do
+      answers = [true, false, true, false]
+      ["-10 -10 10 -10 10 10 -10 10",
+       "-10 -10 -8 -10 -8 8 -6 8 -6 -10 -4 -10 -4 8 2 8 2 -10 4 -10 4 10 -10 10",
+       "-10 -10 -8 -10 -8 8 -6 8 -6 -10 -4 -10 -4 8 -2 8 -2 -10 4 -10 4 10 -10 10",
+       "-10 -10 10 -10 10 -1 -10 -1"].each_with_index do |str, i|
+        poly = Polygon.new(str)
+        position = Position.new(0, 0)
+        expect(poly.contains(position)).to eq(answers[i])
+       end
+    end
+  end
 end

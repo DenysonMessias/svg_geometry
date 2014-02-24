@@ -40,4 +40,22 @@ describe SvgGeometry::Position do
       expect(mult.y).to eq(y1 * scalar)
     end
   end
+
+  describe '#belongs_to_segment' do
+    it 'should check if belongs to segment' do
+      p1 = Position.new(0, 0)
+      p2 = Position.new(5, 5)
+      p = Position.new(2, 2)
+      expect(p.belongs_to_segment(p1, p2)).to eq(true)
+    end
+  end
+
+  describe '#angle_cos' do
+    it 'should return cos of angle' do
+      p1 = Position.new(2, 2)
+      p2 = Position.new(3, 2)
+      p3 = Position.new(2, 3)
+      expect(p1.angle_cos(p2, p3)).to be <= 1E-9
+    end
+  end
 end

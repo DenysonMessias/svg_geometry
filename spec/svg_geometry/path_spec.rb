@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 require 'svg_geometry'
+
 include SvgGeometry
 
 describe SvgGeometry::Path do
@@ -240,14 +241,25 @@ describe SvgGeometry::Path do
         path = Path.new(path_test_data.shift)
         length_delta = 0.2 * path.length
 
-        polygon = path.to_polygon(length_delta)
+        polygons = path.to_polygons(length_delta)
+        all_pos = []
+        polygons.each do |poly|
+          all_pos += poly.positions
+        end
 
         path.segments.each do |segment|
-          expect(polygon.positions).to include(segment.start)
-          expect(polygon.positions).to include(segment.endp)
+          expect(all_pos).to include(segment.start)
+          expect(all_pos).to include(segment.endp)
         end if path.length < FIXNUM_MAX
       end
 
+    end
+  end
+
+  describe "#contains" do
+    it "should check if point belongs to path" do
+      path = Path.new('M -10 -10 L 10 -10 L 10 10 L -10 10 Z M -4 -4 4 -4 4 4 -4 4 Z')
+      expect(path.contains(Position.new(0, 0), 0.5)).to eq(false)
     end
   end
 end
