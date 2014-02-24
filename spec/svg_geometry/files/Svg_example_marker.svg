@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<svg
+  xmlns          ="http://www.w3.org/2000/svg"
+  xmlns:xlink    ="http://www.w3.org/1999/xlink"
+  version=       "1.1"     
+  viewBox=       "0, 0, 360, 220"
+  width=         "360" height="220"
+  stroke-width=  "5px"
+  stroke-linecap="round"
+  stroke=        "black"
+  fill=          "none"
+  font-family=   "Helvetica, Arial"
+  font-size=     "30px"
+>
+
+<title>Marker-Test</title>
+
+<text x="60" y="50" stroke-width="2" fill="black">1)</text>
+<circle id="circle1" stroke="rgb(0%, 0%, 70%)" cx="0" cy="0" r="22"/>
+<marker id="marker1" refX="0" refY="0" viewBox="0 0 40 40" markerUnits="userSpaceOnUse" markerWidth="40" markerHeight="40">
+   <use xlink:href="#circle1"/>  
+</marker> 
+<line x1="130" x2="270" y1="40" y2="40" marker-start="url(#marker1)" marker-end="url(#marker1)"/>
+
+<text x="60" y="120" stroke-width="2" fill="black">2)</text>
+<circle id="circle2" stroke="rgb(70%, 0%, 0%)" cx="0" cy="0" r="20"/>
+<marker id="marker2" refX="0" refY="0" viewBox="-20 -20 40 40" markerUnits="userSpaceOnUse" markerWidth="40" markerHeight="40">
+   <use xlink:href="#circle2"/>  
+</marker> 
+<line x1="130" x2="270" y1="110" y2="110" marker-start="url(#marker2)" marker-end="url(#marker2)"/>
+
+<text x="60" y="190" stroke-width="2" fill="black">3)</text>
+<circle id="circle3" transform="translate(20, 20)" stroke="rgb(0%, 70%, 0%)" cx="0" cy="0" r="20"/>
+<marker id="marker3" refX="20" refY="20" viewBox="0 0 40 40" markerUnits="userSpaceOnUse" markerWidth="40" markerHeight="40">
+   <use xlink:href="#circle3"/>  
+</marker> 
+<line x1="130" x2="270" y1="180" y2="180" marker-start="url(#marker3)" marker-end="url(#marker3)"/>
+
+</svg>

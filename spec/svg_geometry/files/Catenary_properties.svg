@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" 
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg"
+     width="520"
+     height="396"
+     viewBox="0 0 520 396">
+<rect id="background" x="0" y="0" width="520" height="396" style="fill:#FFF"/>
+<rect id="curve" x="40" y="40" width="400" height="276" style="fill:#DDF"/>
+<circle cx="240" cy="216" r="100" style="stroke:#00A;stroke-width:3;fill:none;"/>
+<polyline points="240 216 340 216" style="stroke:#00A;stroke-width:3;fill:none;"/>
+<text x="281" y="211" style="font-family:sans-serif;font-size:36;font-style:italic;color:#00A">a</text>
+<polyline points="40 40 44 54 48 67 52 80 56 93 60 105 64 116 68 128 72 138 76 148 80 158 84 167 88 176 92 185 96 193 100 201 104 208 108 215 112 222 116 228 120 235 124 241 127 246 132 252 136 257 140 261 144 266 148 270 152 274 156 278 160 282 164 285 168 289 172 292 176 295 180 297 184 300 188 302 192 304 196 306 200 308 204 309 208 311 212 312 216 313 220 314 224 314 228 315 232 315 236 316 240 316 244 316 248 315 252 315 256 314 260 314 264 313 268 312 272 311 276 309 280 308 284 306 288 304 292 302 296 300 300 297 304 295 308 292 312 289 316 285 320 282 324 278 328 274 332 270 336 266 340 261 344 257 348 252 352 246 356 241 360 235 364 228 368 222 372 215 376 208 380 201 384 193 388 185 392 176 396 167 400 158 404 148 408 138 412 128 416 116 420 105 424 93 428 80 432 67 436 54 440 40" style="stroke:#000; stroke-width:5; fill:none"/>
+<text x="71" y="76" style="font-family:sans-serif;font-size:36;font-style:italic;color:#000">l</text>
+<text x="231" y="29" style="font-family:sans-serif;font-size:36;font-style:italic;color:#00A">w</text>
+<polyline points="40 20 216 20" style="stroke:#00A;stroke-width:3;fill:none;"/>
+<polyline points="50 10 40 20 50 30" style="stroke:#00A;stroke-width:3;fill:none;"/>
+<polyline points="440 20 264 20" style="stroke:#00A;stroke-width:3;fill:none;"/>
+<polyline points="430 30 440 20 430 10" style="stroke:#00A;stroke-width:3;fill:none;"/>
+<text x="10" y="187" style="font-family:sans-serif;font-size:36;font-style:italic;color:#00A">h</text>
+<polyline points="19 40 19 156" style="stroke:#00A;stroke-width:3;fill:none;"/>
+<polyline points="9 50 19 40 29 50" style="stroke:#00A;stroke-width:3;fill:none;"/>
+<polyline points="19 316 19 200" style="stroke:#00A;stroke-width:3;fill:none;"/>
+<polyline points="29 306 19 316 9 306" style="stroke:#00A;stroke-width:3;fill:none;"/>
+<text x="195" y="394" style="font-family:sans-serif;font-size:36;font-style:italic;color:#00A">b=h+a</text>
+<text x="13" y="348" style="font-family:sans-serif;font-size:18;font-style:italic;color:#00A">x=-w/2</text>
+<text x="226" y="348" style="font-family:sans-serif;font-size:18;font-style:italic;color:#00A">x=0</text>
+<text x="417" y="348" style="font-family:sans-serif;font-size:18;font-style:italic;color:#00A">x=w/2</text>
+<text x="466" y="44" style="font-family:sans-serif;font-size:18;font-style:italic;color:#00A">y=0</text>
+<text x="462" y="320" style="font-family:sans-serif;font-size:18;font-style:italic;color:#00A">y=-h</text>
+</svg>

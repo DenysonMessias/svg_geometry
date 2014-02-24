@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN"
+	"http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+<svg width="232.550mm" height="91.600mm" viewBox="-12 -12 9302 3664" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:jsh="http://www.justsystem.co.jp/hanako13/svg">
+<defs>
+	<pattern id="_hat000" patternUnits="userSpaceOnUse" x="0" y="0" width="84" height="84">
+	<image x="0" y="0" width="84" height="84" jsh:plane="A" jsh:type="image" xlink:href="data:;base64,R0lGODlhCAAIAIAAAP///wAAACH5BAEAAAAALAAAAAAIAAgAAAgWAAEACCBwYMGDCBMqJCiQ
+ocKHEAEEBAA7"></image>
+	</pattern>
+</defs>
+<g visibility="hidden" jsh:type="region">
+<rect fill="none" stroke="#444444" stroke-width="10" x="-160" y="-120" width="9600" height="4000" jsh:type="page"/>
+<rect fill="none" stroke="#444444" stroke-width="10" stroke-dasharray="40 40" x="0" y="0" width="9280" height="3640" jsh:type="margin"/>
+</g>
+<path fill="none" stroke="#000000" stroke-width="16" d="M 0,1005 L 2635,1005 L 2635,3640 L 0,3640 Z" id="Fig_0" jsh:plane="A" jsh:type="polyline">
+</path>
+<path fill="none" stroke="#000000" stroke-width="16" d="M 2635,1005 L 3638,2" id="Fig_1" jsh:plane="A" jsh:type="line">
+</path>
+<path fill="none" stroke="#000000" stroke-width="16" d="M 0,1005 L 1005,0 L 3638,0 L 3638,2627 L 2635,3640" id="Fig_2" jsh:plane="A" jsh:type="polyline">
+</path>
+<path fill="none" stroke="#000000" stroke-width="8" stroke-dasharray="40,40" d="M 1004,60 L 1004,2627 L 3638,2627" id="Fig_3" jsh:plane="A" jsh:type="polyline">
+</path>
+<path fill="none" stroke="#000000" stroke-width="8" stroke-dasharray="40,40" d="M 0,3640 L 1004,2627" id="Fig_4" jsh:plane="A" jsh:type="line">
+</path>
+<g id="Fig_5" jsh:plane="A" jsh:type="hatch" jsh:hatchType="26" jsh:color="#000000">
+<path fill="url(#_hat000)" fill-rule="evenodd" fill-opacity="1" d="M 9280,1819 L 8246,3637 L 6163,3638 L 5113,1822 L 6150,3 L 8231,2 Z"/>
+<path fill="none" stroke="#000000" stroke-width="16" d="M 9280,1819 L 8246,3637 L 6163,3638 L 5113,1822 L 6150,3 L 8231,2 Z" id="Fig_5_0" jsh:type="polyline">
+</path>
+</g>
+
+<path fill="none" stroke="#000000" stroke-width="16" d="M 6152,3 L 7197,1824" id="Fig_6" jsh:plane="A" jsh:type="line">
+</path>
+<path fill="none" stroke="#000000" stroke-width="16" d="M 7199,1818 L 9280,1818" id="Fig_7" jsh:plane="A" jsh:type="line">
+</path>
+<path fill="none" stroke="#000000" stroke-width="16" d="M 6157,3635 L 7195,1815" id="Fig_8" jsh:plane="A" jsh:type="line">
+</path>
+<path fill="none" stroke="#000000" stroke-width="8" d="M 7193,1818 L 8235,5" id="Fig_9" jsh:plane="A" jsh:type="line">
+</path>
+<path fill="none" stroke="#000000" stroke-width="8" d="M 5113,1832 L 7197,1831" id="Fig_10" jsh:plane="A" jsh:type="line">
+</path>
+<path fill="none" stroke="#000000" stroke-width="8" d="M 8224,3622 L 7197,1831" id="Fig_11" jsh:plane="A" jsh:type="line">
+</path>
+</svg>

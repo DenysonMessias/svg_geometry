@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+
+<svg xmlns="http://www.w3.org/2000/svg" 
+  xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"
+  width="500px" height="500px" viewBox="-1 -1 5 5">
+<defs>
+	<marker id="EndArrow" viewBox="0 0 10 10" refX="5" refY="5"
+		markerUnits="strokeWidth" orient="auto"
+		markerWidth="6" markerHeight="4">
+		<polyline points="0,0 10,5 0,10 3,5 Z" fill="black" />
+	</marker>
+
+<!--	<line id="line1" x1="-1" y1="3" x2="3" y2="-1"/>
+	<line id="line2" x1="3.3333" y1="4" x2="1.667" y2="-1"/>
+-->
+</defs>
+<title>One Straight Line</title> 
+<desc>Plot of the line x-y=-1</desc>
+
+<line x1="-1" y1="3" x2="3.9" y2="3" stroke="black" stroke-width=".025" marker-end="url(#EndArrow)"/>
+<line x1="0" y1="4" x2="0" y2="-.9" stroke="black" stroke-width=".025" marker-end="url(#EndArrow)"/>
+
+<line id="line1" x1="-1" y1="3" x2="3" y2="-1" stroke="blue" stroke-width=".05" />
+</svg>
