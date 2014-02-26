@@ -41,8 +41,10 @@ module SvgGeometry
       path_str += "A#{lrx},#{lry} 0 0,1 #{x},#{y + height - lry} "
       path_str += "L#{x},#{y + lry} "
       path_str += "A#{lrx},#{lry} 0 0,1 #{x + lrx},#{y} "
-      
-      SvgGeometry::Path.new(path_str)
+
+      path = SvgGeometry::Path.new(path_str)
+      path.transform = self.transform
+      path
     end
 
     def path

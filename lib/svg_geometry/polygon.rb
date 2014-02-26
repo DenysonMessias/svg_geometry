@@ -76,6 +76,7 @@ module SvgGeometry
       # Completando o polygon, adicionando uma linha do ultimo ponto até o primeiro
       p.segments << Path::Line.new(positions.last.clone, positions.first.clone)
       
+      p.transform = self.transform
       p
     end
 
@@ -115,6 +116,10 @@ module SvgGeometry
         j = i
       end
       (count % 2) == 1
+    end
+
+    def containsRect(rect)
+      
     end
 
     def to_svg_points
