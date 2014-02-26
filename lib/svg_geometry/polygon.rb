@@ -104,11 +104,11 @@ module SvgGeometry
           return true
         end
         if p2.y > position.y && p1.y <= position.y 
-          if (p2 - p1) % (position - p1) < 0
+          if (p2 - p1) % (position - p1) < 1E-8
             count = count + 1
           end
         elsif p1.y > position.y && p2.y <= position.y
-          if (p1 - p2) % (position - p2) < 0
+          if (p1 - p2) % (position - p2) < 1E-8
             count = count + 1
           end
         end

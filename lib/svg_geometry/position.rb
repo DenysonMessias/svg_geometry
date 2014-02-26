@@ -31,8 +31,8 @@ module SvgGeometry
     def belongs_to_segment(end_a, end_b)
       vectorial_product = (self - end_a) % (end_b - end_a)
       if (vectorial_product.abs < 1E-8)
-        return self.x >= [end_a.x, end_b.x].min && self.x <= [end_a.x, end_b.x].max &&
-                self.y >= [end_a.y, end_b.y].min && y <= [end_a.y, end_b.y].max
+        return self.x >= [end_a.x, end_b.x].min - 1E-8 && self.x <= [end_a.x, end_b.x].max + 1E-8 &&
+                self.y >= [end_a.y, end_b.y].min - 1E-8 && y <= [end_a.y, end_b.y].max + 1E-8
       else
         return false
       end
