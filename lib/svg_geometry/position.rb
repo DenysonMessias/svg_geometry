@@ -16,6 +16,10 @@ module SvgGeometry
       end
     end
 
+    def / (den)
+      Position.new(self.x / den, self.y / den)
+    end
+
     def %(other_position)
       self.x * other_position.y - self.y * other_position.x
     end
@@ -42,8 +46,17 @@ module SvgGeometry
       sqrt(((self.x - other_position.x)**2) + ((self.y - other_position.y)**2))
     end
 
+    # project self on v
+    def project(v)
+      (v * (self * v)) / (v * v) 
+    end
+
     def to_s
       "(#{x},#{y})"
+    end
+
+    def self.create_from_array(args)
+      Position.new(args[0], args[1])
     end
   end
 end

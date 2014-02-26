@@ -55,7 +55,26 @@ describe SvgGeometry::Position do
       p1 = Position.new(2, 2)
       p2 = Position.new(3, 2)
       p3 = Position.new(2, 3)
-      expect(p1.angle_cos(p2, p3)).to be <= 1E-9
+      expect(p1.angle_cos(p2, p3).abs).to be <= 1E-9
+    end
+  end
+
+  describe '#project' do
+    it 'should project vector' do
+      p1 = Position.new(5, 5)
+      v = Position.new(2, 0)
+      projected = p1.project(v)
+      expect((projected.x - 5).abs).to be <= 1E-9
+      expect(projected.y.abs).to be <= 1E-9
+    end
+  end
+
+  describe '#create_from_array' do
+    it 'should create Position from array' do
+      args = [1, 2]
+      p = Position.create_from_array(args)
+      expect((p.x - 1).abs).to be <= 1E-9
+      expect((p.y - 2).abs).to be <= 1E-9
     end
   end
 end
