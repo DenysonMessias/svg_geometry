@@ -37,6 +37,6 @@ module SvgGeometry
     v2 = (s - q) % (p - q)
     v3 = (p - r) % (r - s)
     v4 = (q - s) % (r - s)
-    return (v1 * v2 <= 0) && (v3 * v4 <= 0)
+    return (v1 * v2 < 1E-8) && (v3 * v4 < 1E-8)
   end
 end
