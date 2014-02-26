@@ -31,4 +31,12 @@ module SvgGeometry
       return 2 * PI - (ta-tb);
     end
   end
+
+  def cross(p, q, r, s)
+    v1 = (r - q) % (p - q)
+    v2 = (s - q) % (p - q)
+    v3 = (p - r) % (r - s)
+    v4 = (q - s) % (r - s)
+    return (v1 * v2 <= 0) && (v3 * v4 <= 0)
+  end
 end

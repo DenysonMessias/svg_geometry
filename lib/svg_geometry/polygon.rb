@@ -118,8 +118,23 @@ module SvgGeometry
       (count % 2) == 1
     end
 
-    def containsRect(rect)
-      
+    # This function doesn't work for some corner cases, but we live with it
+    # It receives a set of points, not a polygon
+    def containsPoly(poly)
+      j = poly.length - 1
+      for i in (0..poly.length-1)
+        if !self.contains(poly[i])
+          return false
+        end
+        k = self.positions.length - 1
+        for l in (0..self.positions.length-1)
+          if Util::cross(poly[i], poly[j], self.positions[k], self.positions[l])
+            return false
+          end
+        end
+        j = i
+      end
+      return true
     end
 
     def to_svg_points
