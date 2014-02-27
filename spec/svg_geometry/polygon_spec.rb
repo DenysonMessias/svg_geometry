@@ -50,8 +50,9 @@ describe SvgGeometry::Polygon do
 
   describe '#contains_poly' do
     it 'should check if polygon is inside polygon' do
-      p = Polygon.new("0 0 10 0 10 10 0 10")
-      q = [Position.new(2, 2), Position.new(2 ,3), Position.new(3, 3)]
+      p = Polygon.new("0.849394 0.347134 0.873561 0.347134 0.873561 0.31055099999999997 0.849394 0.31055099999999997")
+      q = [Position.new(0.849394, 0.347134), Position.new(0.873561, 0.347134),
+              Position.new(0.873561, 0.31055099999999997), Position.new(0.849394, 0.31055099999999997)]
       expect(p.containsPoly(q)).to eq(true)
     end
   end

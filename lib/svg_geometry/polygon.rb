@@ -123,6 +123,7 @@ module SvgGeometry
     def containsPoly(poly)
       j = poly.length - 1
       for i in (0..poly.length-1)
+        
         if !self.contains(poly[i])
           return false
         end
