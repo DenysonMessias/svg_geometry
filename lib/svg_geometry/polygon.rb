@@ -131,6 +131,7 @@ module SvgGeometry
           if Util::cross(poly[i], poly[j], self.positions[k], self.positions[l])
             return false
           end
+          k = l
         end
         j = i
       end
