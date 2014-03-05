@@ -3,7 +3,7 @@ include SvgGeometry
 
 describe SvgGeometry do
 
-  let(:svg_file_paths){ Dir[File.expand_path('../svg/files/*.svg', __FILE__)] }
+  let(:svg_file_paths){ Dir[File.expand_path('../svg_geometry/files/*.svg', __FILE__)] }
 
   describe '#parse_svg_tag' do
     
@@ -12,6 +12,8 @@ describe SvgGeometry do
     end
 
     it "should parse all svg compatible tags" do
+
+      expect(svg_file_paths).to_not be_empty
 
       svg_file_paths.each do |svg_file_path|
         doc = Nokogiri::XML(File.new(svg_file_path).read)
@@ -26,6 +28,8 @@ describe SvgGeometry do
     end
 
     it "should generate polygon" do
+      
+      expect(svg_file_paths).to_not be_empty
 
       svg_file_paths.each do |svg_file_path|
         doc = Nokogiri::XML(File.new(svg_file_path).read)
