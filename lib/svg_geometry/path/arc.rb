@@ -1,4 +1,6 @@
 # -*- coding: utf-8 -*-
+require File.expand_path('../command_str_params', __FILE__)
+
 module SvgGeometry
   class Path < CommandStrParams
     class Arc
